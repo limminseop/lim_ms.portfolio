@@ -309,7 +309,7 @@
   .exp-row{ padding: var(--space-xl) 0; border-bottom: 1px solid var(--color-hairline); }
   .exp-row:first-child{ padding-top: 0; }
   .exp-row:last-child{ border-bottom: none; }
-  .exp-row-head{ display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md); }
+  .exp-row-head{ display: flex; align-items: baseline; justify-content: flex-start; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md); }
   .exp-period{ white-space: nowrap; }
   .exp-list{ display: flex; flex-direction: column; gap: 14px; }
   .exp-list li{ position: relative; padding-left: 16px; }
@@ -319,7 +319,6 @@
   .exp-list ul.nested li{ padding-left: 18px; font-size: 15px; line-height: 1.55; color: var(--color-mute); }
   .exp-list ul.nested li::before{ content: "○"; font-size: 10px; top: 4px; color: var(--color-ash); }
 
-  .exp-side{ display: flex; flex-direction: column; gap: var(--space-lg); }
   .category-tile{ background: var(--color-canvas); border: 1px solid var(--color-hairline-soft); border-radius: var(--radius-md); padding: var(--space-lg); }
   .category-tile p:first-child{ margin-bottom: 6px; }
   .category-tile p:last-child{ line-height: 1.6; }
@@ -345,13 +344,15 @@
   }
   .filter-chip.active{ background: var(--color-ink); color: var(--color-on-dark); border-color: var(--color-ink); }
 
-  .tools-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+  .tools-grid{ display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); align-items: start; }
   .tools-category{ background: var(--color-canvas); border: 1px solid var(--color-hairline-soft); border-radius: var(--radius-md); padding: var(--space-lg); }
   .tools-category .tab-group-label{ margin-bottom: 12px; }
-  .tools-category .chip-row{ margin-bottom: 0; }
+  .tools-category .chip-row{ display: flex; flex-direction: column; flex-wrap: nowrap; align-items: flex-start; gap: 8px; margin-bottom: 0; }
   .tools-category .filter-chip{ font-size: 13px; padding: 6px 14px; }
-  @media (max-width: 900px){ .tools-grid{ grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px){ .tools-grid{ grid-template-columns: 1fr; } }
+  @media (max-width: 900px){
+    .tools-grid{ grid-template-columns: 1fr; }
+    .tools-category .chip-row{ flex-direction: row; flex-wrap: wrap; align-items: center; }
+  }
 
   .project-table{ width: 100%; border-collapse: collapse; }
   .project-table thead th{
@@ -473,7 +474,7 @@
     margin-bottom: var(--space-lg);
     display: flex; align-items: center; gap: 12px;
     padding: 12px 18px; border-radius: 12px;
-    background: var(--color-surface-soft); border-left: 4px solid var(--color-primary);
+    background: var(--color-canvas); border-left: 4px solid var(--color-primary);
   }
   .editorial-item h3.heading-md .title-icon{
     display: inline-flex; align-items: center; justify-content: center;
@@ -671,7 +672,7 @@
         </div>
         <div class="exp-row">
           <div class="exp-row-head">
-            <h3 class="heading-md">(주)액티브아이티 · 인턴</h3>
+            <h3 class="heading-md">(주)액티브아이티 · 유선영업팀 인턴</h3>
             <span class="body-sm exp-period">2023.06 – 2023.09 (4개월)</span>
           </div>
           <ul class="body-md exp-list">
