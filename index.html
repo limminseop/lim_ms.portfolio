@@ -302,8 +302,9 @@
      EXPERIENCE
      ========================================================= */
   .exp-grid{ display: grid; grid-template-columns: 1fr; gap: var(--space-xxl); margin-top: var(--space-xl); }
-  .edu-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-top: var(--space-xl); align-items: start; }
+  .edu-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-top: var(--space-xl); align-items: stretch; }
   .edu-col{ display: flex; flex-direction: column; gap: var(--space-lg); }
+  .edu-grid > .category-tile{ display: flex; flex-direction: column; }
   @media (max-width: 900px){ .edu-grid{ grid-template-columns: 1fr; } }
   .exp-row{ padding: var(--space-xl) 0; border-bottom: 1px solid var(--color-hairline); }
   .exp-row:first-child{ padding-top: 0; }
@@ -682,7 +683,7 @@
 <section class="section" id="projects">
   <div class="container">
     <p class="eyebrow body-sm-strong">PROJECTS</p>
-    <h2 class="heading-xl">주요 프로젝트 <span class="brand-badge">앤티앤스</span></h2>
+    <h2 class="heading-xl">주요 프로젝트</h2>
     <p class="body-md mute gallery-hint">행을 클릭하면 상세내용, 성과 및 산출물 등을 자세히 볼 수 있어요.</p>
 
     <table class="project-table">
