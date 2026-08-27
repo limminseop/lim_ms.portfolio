@@ -344,9 +344,14 @@
     border-radius: var(--radius-full); border: 1px solid var(--color-hairline);
   }
   .filter-chip.active{ background: var(--color-ink); color: var(--color-on-dark); border-color: var(--color-ink); }
-  .chip-row-tools{ flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; -ms-overflow-style: none; scrollbar-width: none; }
-  .chip-row-tools::-webkit-scrollbar{ display: none; }
-  .chip-row-tools .filter-chip{ font-size: 12px; padding: 6px 12px; flex: none; }
+
+  .tools-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); margin-top: var(--space-xl); }
+  .tools-category{ background: var(--color-canvas); border: 1px solid var(--color-hairline-soft); border-radius: var(--radius-md); padding: var(--space-lg); }
+  .tools-category .tab-group-label{ margin-bottom: 12px; }
+  .tools-category .chip-row{ margin-bottom: 0; }
+  .tools-category .filter-chip{ font-size: 13px; padding: 6px 14px; }
+  @media (max-width: 900px){ .tools-grid{ grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px){ .tools-grid{ grid-template-columns: 1fr; } }
 
   .project-table{ width: 100%; border-collapse: collapse; }
   .project-table thead th{
@@ -656,7 +661,7 @@
               <ul class="nested">
                 <li>온라인 채널 UI/UX 개선안 수립</li>
                 <li>웹/모바일 온라인 채널 활성화 기획</li>
-                <li>가맹 상담 데이터(VOC) 분석 기반의 유저 페인포인트 도출</li>
+                <li>가맹 상담 데이터(VOC) 분석 기반의 유저 페인 포인트 도출</li>
               </ul>
             </li>
             <li>온라인 채널 공통 정책 및 운영 매뉴얼 수립</li>
@@ -670,7 +675,7 @@
             <span class="body-sm exp-period">2023.06 – 2023.09 (4개월)</span>
           </div>
           <ul class="body-md exp-list">
-            <li>LG U+ 기업 파트너사 통신 기업 인턴 수행</li>
+            <li>LG U+ 파트너사(통신 기업)에서 인턴 수행</li>
             <li>프랜차이즈 본부 대상 가맹점 통신 및 POS, CCTV 등 제휴 업무 지원</li>
             <li>프랜차이즈 본부 VOC 대응 및 상담 관리 시트 체계 구축</li>
           </ul>
@@ -772,20 +777,50 @@
   <div class="container">
     <p class="eyebrow body-sm-strong">TOOLS</p>
     <h2 class="heading-xl">함께 일하는 도구</h2>
-    <div class="chip-row chip-row-tools" style="margin-top:24px; margin-bottom:0;">
-      <span class="filter-chip">Notion</span>
-      <span class="filter-chip">Slack</span>
-      <span class="filter-chip">GA</span>
-      <span class="filter-chip">Readdy</span>
-      <span class="filter-chip">Figma</span>
-      <span class="filter-chip">Draw.io</span>
-      <span class="filter-chip">Claude</span>
-      <span class="filter-chip">Gemini</span>
-      <span class="filter-chip">ChatGPT</span>
-      <span class="filter-chip">더존 ERP</span>
-      <span class="filter-chip">MS Office (PPT·Excel)</span>
-      <span class="filter-chip">SMART LOG</span>
-      <span class="filter-chip">모두싸인</span>
+    <div class="tools-grid">
+      <div class="tools-category">
+        <p class="tab-group-label">협업 &amp; 커뮤니케이션</p>
+        <div class="chip-row">
+          <span class="filter-chip">Notion</span>
+          <span class="filter-chip">Slack</span>
+          <span class="filter-chip">모두싸인</span>
+        </div>
+      </div>
+      <div class="tools-category">
+        <p class="tab-group-label">기획 &amp; 디자인</p>
+        <div class="chip-row">
+          <span class="filter-chip">Figma</span>
+          <span class="filter-chip">Canva</span>
+          <span class="filter-chip">Draw.io</span>
+          <span class="filter-chip">Readdy</span>
+        </div>
+      </div>
+      <div class="tools-category">
+        <p class="tab-group-label">AI 툴</p>
+        <div class="chip-row">
+          <span class="filter-chip">Claude</span>
+          <span class="filter-chip">Gemini</span>
+          <span class="filter-chip">ChatGPT</span>
+          <span class="filter-chip">Perplexity</span>
+        </div>
+      </div>
+      <div class="tools-category">
+        <p class="tab-group-label">문서 &amp; 오피스</p>
+        <div class="chip-row">
+          <span class="filter-chip">MS Office (PPT·Excel·Word)</span>
+          <span class="filter-chip">Google Docs</span>
+          <span class="filter-chip">Google Sheets</span>
+          <span class="filter-chip">Google Slides</span>
+        </div>
+      </div>
+      <div class="tools-category">
+        <p class="tab-group-label">데이터 &amp; 운영</p>
+        <div class="chip-row">
+          <span class="filter-chip">GA</span>
+          <span class="filter-chip">SMART LOG</span>
+          <span class="filter-chip">더존 ERP</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -804,8 +839,8 @@
           <li><strong>사내 가이드 '신입사원으로 살아남기' 제작</strong><br>신규 입사자뿐만 아니라 기존 팀원과 유관 부서에서도 상시 확인하는 팀의 필수 자산으로 자리 잡았습니다.<br>당사 브랜드 정보부터 외식업 도메인 지식, 전사 문서 규정 등 실무에 필요한 핵심 정보를 체계적으로 정리했습니다.</li>
           <li><strong>내·외부 반복 문의 해결을 위한 업무 매뉴얼 및 표준 양식 체계화</strong><br>업무 중 잦은 질문이 발생하는 지점을 파악하여 실무자들이 즉시 활용할 수 있는 가이드라인을 전반적으로 구축했습니다.
             <ul class="nested">
-              <li>영업 담당자의 일관된 응대를 위한 '가맹 상담 시트 사용 매뉴얼'를 제작</li>
-              <li>미국 본사에 제출하는 영문 서식 자료를 한글로 번역본 및 매뉴얼 제작</li>
+              <li>영업 담당자의 일관된 응대를 위한 '가맹 상담 시트 사용 매뉴얼'을 제작</li>
+              <li>미국 본사에 제출하는 영문 서식 자료의 한글 번역본 및 매뉴얼 제작</li>
             </ul>
           </li>
         </ul>
@@ -813,9 +848,9 @@
       </article>
 
       <article class="editorial-item">
-        <h3 class="heading-md"><span class="title-icon">🤖</span>효율적으로 일하는 방식을 고민합니다 (with A.I)</h3>
+        <h3 class="heading-md"><span class="title-icon">🤖</span>효율적으로 일하는 방식을 고민합니다 (with AI)</h3>
         <ul>
-          <li><strong>AI 툴을 활용한 직관적인 Mock-up 제작</strong><br>정적인 문서의 한계를 극복하고자 생성형 AI 툴을 활용해 실제 구동 가능한 프로토타입을 선제적으로 제작했습니다.<br>이를 통해 외주 에이전시·유관부서와의 협업 효율을 높였습니다.</li>
+          <li><strong>AI 툴을 활용한 직관적인 Mock-up 제작</strong><br>정적인 문서의 한계를 극복하고자 생성형 AI 툴을 활용해 실제 구동 가능한 프로토타입을 선제적으로 제작했습니다.<br>이를 통해 외주 에이전시·유관 부서와의 협업 효율을 높였습니다.</li>
           <li><strong>맞춤형 프롬프트 기획을 통한 실무 비효율 개선</strong><br>영업팀의 파편화된 가맹 상담 텍스트를 일관된 데이터로 자동 정리하는 '맞춤형 AI 프롬프트'를 기획·배포했습니다.</li>
         </ul>
         <p class="body-md"><strong><mark class="mark-red">새로운 IT 트렌드에 깊은 관심을 두고 다양한 AI 툴을 능동적으로 탐색·실험하며, 끊임없이 실무의 효율성을 극대화해 나가는 기획자로 성장하고 있습니다.</mark></strong></p>
@@ -841,7 +876,7 @@
       <article class="editorial-item">
         <h3 class="heading-md"><span class="title-icon">🤝</span>직함 없이 마음을 얻는 '조력자'</h3>
         <ul>
-          <li><strong>경계를 넘는 경청과 VOC 기반의 유저 중심 기획</strong><br>신규 매장 오픈 과정에서 포기를 고민하던 점주님의 불안감을 담당 업무가 아님에도 깊이 경청하고 비전을 설득해 무사히 오픈을 이끌어냈습니다.<br>현장에서 파악한 진짜 니즈는 이후 '예비 창업자 대상 웹사이트' 기획의 핵심 자산이 되었습니다.</li>
+          <li><strong>경계를 넘는 경청과 VOC 기반의 유저 중심 기획</strong><br>신규 매장 오픈 과정에서 포기를 고민하던 점주님의 불안감을 담당 업무가 아님에도 깊이 경청하고 비전을 제시하며 설득해 무사히 오픈을 이끌어냈습니다.<br>현장에서 파악한 진짜 니즈는 이후 '예비 창업자 대상 웹사이트' 기획의 핵심 자산이 되었습니다.</li>
         </ul>
       </article>
     </div>
@@ -866,7 +901,7 @@
             <p class="tab-group-label">교육</p>
             <ul class="tab-list">
               <li>
-                <p class="tab-item-title">AI PM/PO 바이블 : AI 프로덕트 기획 실무부터 에이전트구현까지 (2026.08)</p>
+                <p class="tab-item-title">AI PM/PO 바이블 : AI 프로덕트 기획 실무부터 에이전트 구현까지 (2026.08)</p>
                 <p class="tab-item-org">패스트캠퍼스</p>
               </li>
               <li>
@@ -890,7 +925,7 @@
         <ul class="tab-list cert-list">
           <li>
             <p class="tab-item-title">GAC(Google Analytics Certification)</p>
-            <p class="tab-item-org">등록번호 22-K9-092238 · 발급기관 Google · 취득일자 2025.06</p>
+            <p class="tab-item-org">등록번호 150555469 · 발급기관 Google · 취득일자 2025.06</p>
           </li>
           <li>
             <p class="tab-item-title">SMAT(서비스경영) 1급</p>
@@ -930,12 +965,13 @@
   <div class="container footer-grid">
     <div>
       <p class="body-sm-strong">Quick Links</p>
-      <a href="#top">프로필</a>
-      <a href="#experience">경력</a>
-      <a href="#projects">프로젝트</a>
+      <a href="#top">Profile</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#tools">Tools</a>
       <a href="#how-work">How I work</a>
       <a href="#how-grow">How I grow</a>
+      <a href="#education">Education</a>
     </div>
     <div>
       <p class="body-sm-strong">Contact</p>
@@ -976,7 +1012,7 @@
       <ul>
         <li><strong>목적</strong><br>데이터 신뢰성과 운영 효율을 높이기 위한 상담 관리 시스템 고도화</li>
         <li><strong>주요 방향</strong><br>운영 프로세스 기반 어드민 기능 재설계, 데이터 유실 방지 및 운영 정책 수립, 실시간 운영 지표 대시보드 기획</li>
-        <li><strong>참여구성원(4명)</strong><br>본인(메인 PM) / 외주 에이전시 2명(풀스택 개발자, 디자이너)<br class="lb-collapse"> 영업 담당자 1명</li>
+        <li><strong>참여구성원(4명)</strong><br>본인(메인 PM) / 외주 에이전시 2명(풀스택 개발자, 디자이너)<br class="lb-collapse"> / 영업 담당자 1명</li>
       </ul>
 
       <h4 class="body-sm-strong section-label">역할</h4>
@@ -1049,13 +1085,13 @@
       <div class="modal-chips">
         <span class="chip">2024.07 – 2024.12 (6개월)</span>      </div>
       <h3 id="t2" class="heading-lg">B2B 웹/모바일 신규 구축 프로젝트 (생성형 AI 활용)</h3>
-      <p class="body-sm modal-role">역할: 프로젝트 리딩, 유저플로우 및 서비스 프로세스 전반 기획, 외주 에이전시 관리 · 단독기획 70%</p>
+      <p class="body-sm modal-role">역할: 프로젝트 리딩, 유저플로우 및 서비스 프로세스 전반 기획, 외주 에이전시 관리</p>
 
-      <h4 class="body-sm-strong section-label">프로젝트 요약</h4>
+      <h4 class="body-sm-strong section-label">개요</h4>
       <ul>
         <li><strong>목적</strong><br>브랜드 예비 창업자 대상 브랜드 경험 강화</li>
         <li><strong>주요 방향</strong><br>창업 전용 홈페이지 신규 구축</li>
-        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(풀스택 개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> 영업 담당자 1명</li>
+        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(풀스택 개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> / 영업 담당자 1명</li>
       </ul>
 
       <h4 class="body-sm-strong section-label">역할</h4>
@@ -1131,13 +1167,13 @@
       <div class="modal-chips">
         <span class="chip">2025.03 – 2025.06 (4개월)</span>      </div>
       <h3 id="t3" class="heading-lg">웹/모바일 UI/UX 개선 및 상담 전환 퍼널 개선 프로젝트</h3>
-      <p class="body-sm modal-role">역할: 프로젝트 리딩, UI/UX 기획, 외주 에이전시 관리 · 단독기획 70% + 외주 협업(디자인·개발) 30%</p>
+      <p class="body-sm modal-role">역할: 프로젝트 리딩, UI/UX 기획, 외주 에이전시 관리</p>
 
       <h4 class="body-sm-strong section-label">개요</h4>
       <ul>
         <li><strong>목적</strong><br>예비 점주 상담 전환 퍼널 최적화</li>
         <li><strong>주요 방향</strong><br>상담 전환 흐름 개선을 위한 기능 개선</li>
-        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(풀스택 개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> 영업 담당자 1명</li>
+        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(풀스택 개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> / 영업 담당자 1명</li>
       </ul>
 
       <h4 class="body-sm-strong section-label">역할</h4>
@@ -1156,7 +1192,7 @@
 
       <h4 class="body-sm-strong section-label">진행 업무 상세</h4>
       <ul>
-        <li>동종업 프랜차이즈 웹사이트 60여 곳의 유입·상담 전환 퍼널 벤치마킹, CTA 배치·입력 항목 수 데이터 분석</li>
+        <li>동종업계 프랜차이즈 웹사이트 60여 곳의 유입·상담 전환 퍼널 벤치마킹, CTA 배치·입력 항목 수 데이터 분석</li>
         <li>모바일 유입 비중 80% 확인 → 스크롤 기반 원페이지(One-page) IA로 재구성</li>
         <li>필수 3개 항목만 받는 '간편 상담 배너'와 실시간 '카카오톡 상담' 신규 도입, 기존 '상세 상담' 경로는 유지해 고객 의도별 맞춤 문의 환경 구축</li>
       </ul>
@@ -1212,7 +1248,7 @@
       <ul>
         <li><strong>목적</strong><br>예비 창업자의 상권 정보 탐색 경험 개선, 상담 이전 단계에서 스스로 확인 가능한 Self-Service 환경 구축</li>
         <li><strong>주요 방향</strong><br>사용자 니즈 기반 신규 콘텐츠·어드민 기능 기획, 탐색부터 상담까지 이어지는 유저 플로우 설계</li>
-        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(풀스택 개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> 영업 담당자 1명</li>
+        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(풀스택 개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> / 영업 담당자 1명</li>
       </ul>
 
       <h4 class="body-sm-strong section-label">역할</h4>
@@ -1220,7 +1256,7 @@
         <li>신규 서비스 기획 및 PRD 작성</li>
         <li>정보구조(IA) 및 유저 플로우 설계</li>
         <li>어드민 기능 기획</li>
-        <li>유관부서 및 외주 개발사 협업</li>
+        <li>유관 부서 및 외주 개발사 협업</li>
       </ul>
 
       <h4 class="body-sm-strong section-label">배경 및 문제정의</h4>
@@ -1282,12 +1318,12 @@
         <span class="chip">2024.01 – 현재</span>
         <span class="chip chip-dark">상시 업무</span>
       </div>
-      <h3 id="t5" class="heading-lg">[상시 업무] 온라인 채널 운영 및 가맹 유입 퍼널 고도화</h3>
-      <p class="body-sm modal-role">역할: VOC 분석 및 UX 개선 / 신규 채널 도입 / 검색광고 기획 및 대행사 관리 / 운영 지표 모니터링</p>
+      <h3 id="t5" class="heading-lg">온라인 채널 운영 및 가맹 유입 퍼널 고도화</h3>
+      <p class="body-sm modal-role">역할: VOC 분석 및 UX 개선 / 신규 채널 도입 / 검색광고 운영 및 대행사 관리 / 운영 지표 모니터링</p>
 
       <h4 class="body-sm-strong section-label">진행 업무</h4>
       <ul>
-        <li>네이버 검색광고 운영 및 대행사 관리 (유입 단계부터 상담 신청까지의 유저 퍼널 최적화)</li>
+        <li>네이버 검색광고 운영 및 대행사 관리<br class="lb-collapse"> (유입 단계부터 상담 신청까지의 유저 퍼널 최적화)</li>
         <li>정량적 지표(유입, 전환, 이탈 등) 기반의 서비스 활성화 데이터 모니터링</li>
         <li>가맹 상담 VOC 분석 기반의 유저 페인 포인트 도출 및 서비스 기획·UI/UX 개선 반영</li>
         <li>유관 부서 싱크 및 의사결정 지원을 위한 위클리 핵심 운영 지표 리포트 발행 및 대시보드 관리</li>
@@ -1350,11 +1386,25 @@
       a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
     });
   }
+  function clearActive(){
+    spyLinks.forEach(function(a){ a.classList.remove('is-active'); });
+  }
+  var spyContactSection = document.getElementById('contact');
   if (spySections.length){
     var spyLine = 140; /* reference line from top of viewport, just under sticky nav */
     var spyTicking = false;
+    function isAtBottom(){
+      return (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 2);
+    }
     function updateSpy(){
       spyTicking = false;
+      /* Contact isn't a GNB nav-link (it's the standalone CTA button), so once the
+         user has reached it — or simply hit the bottom of the page — no nav item
+         should stay highlighted. */
+      if (isAtBottom() || (spyContactSection && spyContactSection.getBoundingClientRect().top <= spyLine)){
+        clearActive();
+        return;
+      }
       var current = spySections[0];
       for (var i = 0; i < spySections.length; i++){
         if (spySections[i].getBoundingClientRect().top <= spyLine){ current = spySections[i]; }
