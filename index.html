@@ -232,28 +232,22 @@
   }
   .hero-desc{ margin: var(--space-lg) 0 var(--space-xl); max-width: 480px; }
   .hero-desc-sm{ font-size:14px; line-height:1.65; max-width:600px; }
-  .hero-profile-list{
-    display:grid; grid-template-columns:1fr 1fr; gap:10px 20px;
-    margin:0 0 28px; padding:20px 22px;
-    background:var(--color-surface-card); border-radius:var(--radius-md);
-    list-style:none;
+  .hero-profile-block{ margin:0 0 28px; }
+  .hero-profile-lead-text{
+    font-weight:700; color:var(--color-ink); font-size:14px; line-height:1.5;
+    background: rgba(0,100,224,.08); padding:11px 14px; border-radius:8px; margin:0 0 12px;
   }
-  .hero-profile-list li{
-    position:relative; padding-left:17px; font-size:13px; line-height:1.55; color:var(--color-body);
+  .hero-stat-row{ display:flex; gap:10px; margin:0 0 14px; }
+  .hero-stat{
+    flex:1; background:var(--color-surface-card); border-radius:var(--radius-md);
+    padding:12px 14px;
   }
-  .hero-profile-list li::before{
-    content:"✓"; position:absolute; left:0; top:1px; color:var(--color-primary); font-weight:800; font-size:11px;
-  }
-  .hero-profile-list li strong{ display:block; color:var(--color-ink); font-size:13px; margin-bottom:1px; }
+  .hero-stat-num{ display:block; font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--color-primary); line-height:1.2; }
+  .hero-stat-label{ display:block; font-size:12px; color:var(--color-body); margin-top:2px; }
+  .hero-stat-sub{ display:block; font-size:11px; color:var(--color-body); opacity:.65; margin-top:1px; }
+  .hero-tag-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .hero-tag-row .chip{ background: rgba(0,100,224,.1); color: var(--color-primary); }
   .hero-title-sm{ font-size:29px; }
-  .hero-profile-lead{ grid-column:1 / -1; font-weight:700; color:var(--color-ink); }
-  .hero-profile-list li.hero-profile-lead{
-    background: rgba(0,100,224,.08);
-    padding:11px 14px;
-    border-radius:8px;
-    margin-bottom:8px;
-  }
-  .hero-profile-list li.hero-profile-lead::before{ content:none; }
 
   .hero-actions{ display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 
@@ -561,7 +555,7 @@
     .project-table, .project-table tbody, .project-table tr, .project-table td{ display: block; width: 100%; }
     .project-table tr{ padding: var(--space-lg) 0; }
     .project-table td{ padding: 2px 0; }
-    .hero-profile-list{ grid-template-columns: 1fr; }
+    .hero-stat-row{ flex-direction: column; }
     .lb-collapse{ display: none; }
   }
 
@@ -620,8 +614,22 @@
     <div class="hero-text">
       <p class="eyebrow body-sm-strong">PM · 임민섭</p>
       <h1 class="display-xl hero-title-sm">오프라인 비즈니스의 복잡한 니즈를<br>시스템으로 해결하는 기획자 임민섭입니다.</h1>
-      <p class="body-md hero-desc hero-desc-sm">외식 F&amp;B 도메인에 대한 깊은 이해와 현장 경험을 바탕으로, 비즈니스와 유저를 잇는 3년 차 PM입니다. 일이 되게 만드는 것을 중시하며 함께 성장하는 팀 플레이어가 되고자 합니다.</p>
-      <ul class="hero-profile-list"><li class="hero-profile-lead">외식 프랜차이즈 브랜드 '앤티앤스 프레즐' 예비 창업자 대상 웹/모바일 서비스 기획 및 PM</li><li><strong>End-to-End 리딩</strong>웹/모바일 서비스 기획(PRD, IA, 플로우 설계 등)부터 QA, 론칭까지 전 과정 주도</li><li><strong>데이터 기반 사용성 개선</strong>VOC 및 로그 데이터 기반 UI/UX 고도화로 창업 상담 문의 전년 대비 41% 증대</li><li><strong>어드민 페이지 고도화</strong>실무자용 통계 대시보드 및 맞춤형 Back-office 기획을 통해 운영 리드타임 38% 단축</li><li><strong>트래픽 유입 및 퍼널 최적화</strong>예비 창업자 대상 네이버 검색광고 키워드 최적화를 통해 웹 트래픽 유입 제고 경험</li><li><strong>협업 주도</strong>유관 부서(마케팅·영업) 및 외주 에이전시(디자인·개발)와의 원활한 커뮤니케이션 및 협업 환경 구축</li><li><strong>O2O 도메인 전문성</strong>외식 프랜차이즈 가맹점 오픈 프로세스 전반의 현장 실무 경험을 IT 프로덕트 기획에 접목</li></ul>
+      <p class="body-md hero-desc hero-desc-sm">오프라인 현장에 대한 깊은 이해와 실무 경험을 바탕으로, 비즈니스와 유저를 잇는 3년 차 PM입니다. 일이 되게 만드는 것을 중시하며 함께 성장하는 팀 플레이어가 되고자 합니다.</p>
+      <div class="hero-profile-block">
+        <p class="hero-profile-lead-text">외식 프랜차이즈 브랜드 '앤티앤스 프레즐' 예비 창업자 대상 웹/모바일 서비스 기획 및 PM</p>
+        <div class="hero-stat-row">
+          <div class="hero-stat"><span class="hero-stat-num">41%</span><span class="hero-stat-label">상담 전환 증가</span><span class="hero-stat-sub">전년 대비</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">38%</span><span class="hero-stat-label">상담 리드타임 단축</span><span class="hero-stat-sub">2.6일 → 1.6일</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">40%</span><span class="hero-stat-label">정보 접근 단계 단축</span><span class="hero-stat-sub">5단계 → 3단계</span></div>
+        </div>
+        <div class="hero-tag-row">
+          <span class="chip">#EndToEnd리딩</span>
+          <span class="chip">#데이터기반UX개선</span>
+          <span class="chip">#어드민고도화</span>
+          <span class="chip">#퍼널최적화</span>
+          <span class="chip">#외주협업리딩</span>
+        </div>
+      </div>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-secondary">프로젝트 보기</a>
       </div>
@@ -1013,7 +1021,7 @@
       <ul>
         <li><strong>목적</strong><br>데이터 신뢰성과 운영 효율을 높이기 위한 상담 관리 시스템 고도화</li>
         <li><strong>주요 방향</strong><br>운영 프로세스 기반 어드민 기능 재설계, 데이터 유실 방지를 위한 필수값 검증 로직 구현, 실시간 운영 지표 대시보드 기획</li>
-        <li><strong>참여구성원(4명)</strong><br>본인(메인 PM) / 외주 에이전시 2명(풀스택 개발자, 디자이너)<br class="lb-collapse"> / 영업 담당자 1명</li>
+        <li><strong>참여구성원(4명)</strong><br>본인(메인 PM) / 외주 에이전시 2명(개발자, 디자이너)<br class="lb-collapse"> / 영업 담당자 1명</li>
       </ul>
 
       <h4 class="body-sm-strong section-label">역할</h4>
@@ -1092,7 +1100,7 @@
       <ul>
         <li><strong>목적</strong><br>브랜드 예비 창업자 대상 브랜드 경험 강화</li>
         <li><strong>주요 방향</strong><br>창업 전용 홈페이지 신규 구축</li>
-        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(풀스택 개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> / 영업 담당자 1명</li>
+        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> / 영업 담당자 1명</li>
       </ul>
 
       <h4 class="body-sm-strong section-label">역할</h4>
@@ -1174,7 +1182,7 @@
       <ul>
         <li><strong>목적</strong><br>예비 점주 상담 전환 퍼널 최적화</li>
         <li><strong>주요 방향</strong><br>상담 전환 흐름 개선을 위한 기능 개선</li>
-        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(풀스택 개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> / 영업 담당자 1명</li>
+        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> / 영업 담당자 1명</li>
       </ul>
 
       <h4 class="body-sm-strong section-label">역할</h4>
@@ -1249,7 +1257,7 @@
       <ul>
         <li><strong>목적</strong><br>예비 창업자의 상권 정보 탐색 경험 개선, 상담 이전 단계에서 스스로 확인 가능한 Self-Service 환경 구축</li>
         <li><strong>주요 방향</strong><br>사용자 니즈 기반 신규 콘텐츠·어드민 기능 기획, 탐색부터 상담까지 이어지는 유저 플로우 설계</li>
-        <li><strong>참여구성원(5명)</strong><br>본인(메인 PM) / 외주 에이전시 3명(풀스택 개발자, 디자이너, 퍼블리셔)<br class="lb-collapse"> / 영업 담당자 1명</li>
+        <li><strong>참여구성원(4명)</strong><br>본인(메인 PM) / 외주 에이전시 2명(개발자, 디자이너)<br class="lb-collapse"> / 영업 담당자 1명</li>
       </ul>
 
       <h4 class="body-sm-strong section-label">역할</h4>
